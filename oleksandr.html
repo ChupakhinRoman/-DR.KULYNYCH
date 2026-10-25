@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Олександр Кулинич - Стоматологія DR. KULYNYCH</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f6f1e7;--panel:#fcfaf4;--ink:#2a2318;--muted:#6a5e4a;--line:#e3d7bd;--gold-deep:#7a5516;--gold-text:#9a6c14;--gold:#b8862b;--gold-hi:#e6c875;
+--gold-grad:linear-gradient(120deg,#7a5516 0%,#b8862b 40%,#d4ac52 54%,#a06f1c 78%,#7a5516 100%);
+--btn-grad:linear-gradient(120deg,#8a5f17 0%,#cfa447 38%,#e9d089 52%,#a8761f 78%,#8a5f17 100%);
+--f:'Arimo','Arial','Liberation Sans',Helvetica,sans-serif;color-scheme:light}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.55;
+padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:980px;margin-inline:auto}
+a{color:inherit}h1,h2,h3{font-family:var(--f);margin:0;line-height:1.12;text-wrap:balance}
+.gold{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:var(--gold-deep);-webkit-text-fill-color:transparent;font-weight:700}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{font:700 19px/1 var(--f);text-decoration:none;letter-spacing:.02em}
+.back{font:700 14px/1 var(--f);color:var(--gold-deep);text-decoration:none;border-bottom:1.5px solid var(--gold-hi);padding-bottom:3px}
+.hero{display:grid;grid-template-columns:1fr;background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 18px 40px -28px rgba(90,60,10,.4)}
+.hero .txt{padding:34px 30px;min-width:0}
+.ph{position:relative;min-height:380px;background:linear-gradient(160deg,#fff,#efe5cd)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 6%;mix-blend-mode:multiply}
+h1{font-size:clamp(28px,4.6vw,44px)}
+h1 small{display:block;font:700 16px/1.35 var(--f);color:var(--muted);margin-top:10px}
+.reg{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:9px}
+.reg li{padding-left:22px;position:relative}
+.reg li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--gold-grad)}
+.reg .cat{color:var(--gold-text);font-weight:700}
+.secs{display:grid;gap:18px;margin-top:26px}
+.sec{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 26px}
+.sec h2{font-size:22px;margin-bottom:10px}
+.sec p{margin:0;color:var(--muted)}
+.soon{display:inline-block;margin-top:12px;font:700 12px/1 var(--f);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);background:rgba(184,134,43,.12);padding:7px 11px;border-radius:999px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 10px}
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;padding:15px 26px;border-radius:999px;font:700 15px/1.2 var(--f);text-decoration:none;border:1.5px solid transparent;white-space:nowrap}
+.btn-gold{background:var(--btn-grad);color:#2a1d05;box-shadow:0 6px 18px -6px rgba(138,95,23,.55),inset 0 1px 0 rgba(255,255,255,.55)}
+.sweep::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:36%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-22deg);animation:sweep 4.2s ease-in-out infinite}
+@keyframes sweep{0%{left:-70%}40%,100%{left:140%}}
+.btn-line{border-color:var(--gold);color:var(--gold-deep);background:rgba(255,255,255,.5)}
+.foot{padding-block:30px 40px;color:var(--muted);font-size:14.5px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.ph{order:-1;min-height:0;aspect-ratio:1/1;max-height:420px}.hero .txt{padding:26px 22px}.cta .btn{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){.sweep::after{animation:none}}
+
+.lst{margin:0;padding-left:20px;display:grid;gap:7px;color:var(--ink)}
+.lst li::marker{color:var(--gold)}
+.lst.n{list-style:decimal}
+.sec p+ul,.sec ul+p,.sec p+p{margin-top:10px}
+.sec h3{font-size:16.5px;color:var(--gold-text);margin:18px 0 8px}.sec h2+h3{margin-top:4px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0}
+.kv dt{color:var(--gold-text);font-weight:700;white-space:nowrap}.kv dd{margin:0;color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:14px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;background:#fff8}
+.stat b{display:block;font:700 26px/1 var(--f);color:var(--gold-deep)}.stat span{font-size:13.5px;color:var(--muted)}
+details.more-d{border:1px solid var(--line);border-radius:14px;margin-top:12px;background:#fff6}
+details.more-d summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:700;color:var(--gold-deep);display:flex;align-items:center;justify-content:space-between;gap:14px}
+details.more-d summary::-webkit-details-marker{display:none}
+details.more-d summary::after{content:"+";flex:none;width:22px;text-align:center;font-size:22px;line-height:1}
+details.more-d[open] summary::after{content:"-"}
+details.more-d>.lst{padding:0 18px 16px 38px}
+.lk{font-size:14px}.lk a{color:var(--gold-deep)}
+.tag{display:inline-block;font:700 11px/1 var(--f);letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep);background:rgba(184,134,43,.14);padding:3px 7px;border-radius:999px;vertical-align:1px}
+.note{font-size:14.5px;color:var(--muted)}
+@media(max-width:560px){.kv{grid-template-columns:1fr;gap:0}.kv dd{margin-bottom:8px}}
+
+.gt,.sec p.gt,.sec li .gt,.sec .gt{color:var(--gold-text);font-weight:700}
+.note.gt,.sec p.note.gt{font-weight:400}
+h1 small.gt{color:var(--gold-text)}
+.stats{align-items:stretch}
+.stat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:112px;padding:14px 12px;text-align:center}
+.stat b{margin:0;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:var(--gold-deep);-webkit-text-fill-color:transparent}
+.stat span{display:block;line-height:1.3}
+.tag.sc{background:var(--btn-grad);color:#2a1d05}
+.foot a{color:var(--gold-deep);text-decoration:none;border-bottom:1.5px solid var(--gold-hi);white-space:nowrap}
+.exp b{color:inherit}
+</style></head><body><div class="wrap">
+<div class="bar"><a class="brand gold" href="./">DR. KULYNYCH</a><a class="back" href="./">← На головну</a></div>
+<div class="hero">
+ <div class="txt"><h1>КУЛИНИЧ<br>Олександр Олександрович</h1><ul class="reg"><li>Ортодонт-стоматолог</li><li>Дитячий терапевт-стоматолог</li><li class="cat">Лікар другої кваліфікаційної категорії</li><li class="cat">Загальний стаж - 10 років</li></ul></div>
+ 
+</div>
+<div class="secs">
+<section class="sec"><h2>Освіта та дипломи</h2><ul class="lst "><li>Національний медичний університет <span class="gt">імені О.О. Богомольця</span>, 2011-2016 рр.</li><li>Інтернатура на базі Броварської районної поліклініки та НМУ <span class="gt">імені О.О. Богомольця</span>, 2016-2018 рр.</li></ul><h3>Додаткова освіта (спеціалізація)</h3><ul class="lst "><li>Ортодонтія</li><li>Дитяча стоматологія</li></ul></section>
+<section class="sec"><h2>Досвід роботи</h2><p class="gt exp">Загальний стаж роботи - <b>10 років</b>.</p></section>
+<section class="sec"><h2>Професійні навички</h2><details class="more-d" open><summary>Ортодонтія</summary><ul class="lst "><li>Виготовлення дитячих пластинок з гвинтом на верхню щелепу та додатковими елементами</li><li>Хайракс, Марко Росса</li><li>Лікування брекет-системою</li><li>Встановлення мікроімплантів, накладок</li><li>Виготовлення знімних та незнімних апаратів</li><li>Встановлення апаратів з мікроімплантами за типом MSE, Leon</li><li>Встановлення ретейнерів, виготовлення ретенційних кап</li><li>Лікування дітей при незрощеннях губи та піднебіння</li></ul></details><details class="more-d"><summary>Терапевтична стоматологія</summary><ul class="lst "><li>Ендодонтичне лікування в дорослому та дитячому віці</li><li>Терапевтичне лікування</li><li>Надання першої невідкладної допомоги</li><li>Естетичні реставрації зубів (прямі та непрямі) у фронтальній та боковій ділянках</li><li>Шинування зубів</li></ul></details><details class="more-d"><summary>Протезування</summary><ul class="lst "><li>Комплексне протезування (знімне, незнімне)</li><li>Виготовлення повних та часткових знімних протезів, бюгельне протезування</li><li>Обробка зубів під металокерамічні конструкції, пресс-кераміку, цирконій</li><li>Вініри (з Mock-Up та без)</li><li>Вкладки (інлей, оверлей)</li><li>Штифти (металеві та безметалові), Build-Up зубів</li><li>Виготовлення тимчасових коронок</li><li>Протезування на імплантатах (відкрита ложка)</li><li>Протезування на мультиюнітах All-on-4-6</li></ul></details><details class="more-d"><summary>Хірургія</summary><ul class="lst "><li>Видалення молочних та постійних зубів</li><li>Надання невідкладної допомоги</li><li>Реплантація зубів, шинування</li><li>Ушивання тканин</li></ul></details><details class="more-d"><summary>Знеболення</summary><ul class="lst "><li>Провідникова та інфільтраційна анестезія (окрім позаротових методів)</li></ul></details><details class="more-d"><summary>Профілактика та діагностика</summary><ul class="lst "><li>Професійна чистка: скейлінг, Air Flow</li><li>Відбілювання зубів</li><li>ОПТГ та прицільні знімки</li><li>Діагностика КТ, ТРГ</li></ul></details></section>
+</div>
+<div class="cta"><a class="btn btn-gold sweep" href="https://t.me/Roman_Liberta">Записатись на прийом</a><a class="btn btn-line" href="tel:+380937727609">Зателефонувати</a></div>
+<div class="foot"><a href="tel:+380937727609">+380 93 772 7609</a> · <a href="tel:+380638164346">+380 63 816 4346</a><br><a href="https://maps.app.goo.gl/JaXmD9aD546bjNXc8">с. Новосілки, вул. Озерна, 27-А, ЖК на Озерній</a><br>© 2026 Стоматологічна клініка DR. KULYNYCH. Всі права захищені.</div>
+</div></body></html>
