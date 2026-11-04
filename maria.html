@@ -82,9 +82,11 @@ h1 small.gt{color:var(--gold-text)}
 .dips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:6px}
 .dips.one{grid-template-columns:minmax(0,1fr)}
 figcaption{font-size:13.5px;color:var(--muted);margin-top:7px;line-height:1.35}
-dialog.lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible}
+dialog.lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible;outline:0;box-shadow:none}
+dialog.lb:focus,dialog.lb:focus-visible,dialog.lb img:focus,dialog.lb img:focus-visible{outline:0}
+dialog.lb img{-webkit-tap-highlight-color:transparent}
 dialog.lb::backdrop{background:rgba(20,14,4,.82)}
-dialog.lb img{display:block;max-width:96vw;max-height:92vh;border-radius:10px;background:#fff;cursor:zoom-out}
+dialog.lb img{touch-action:pan-y;user-select:none;display:block;max-width:96vw;max-height:92vh;border-radius:10px;background:transparent;border:0;outline:0;cursor:zoom-out}
 @media(max-width:560px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.gal figure:nth-child(3){grid-column:1/-1}.gal figure:nth-child(3) .zoom{aspect-ratio:16/11}.dips{grid-template-columns:minmax(0,1fr)}}
 </style></head><body><div class="wrap">
 <div class="bar"><a class="brand gold" href="./">DR. KULYNYCH</a><a class="back" href="./">← На головну</a></div>
@@ -107,7 +109,19 @@ dialog.lb img{display:block;max-width:96vw;max-height:92vh;border-radius:10px;ba
 <dialog class="lb" id="lb"><img id="lbi" alt=""></dialog>
 <script>
 (function(){var lb=document.getElementById('lb'),im=document.getElementById('lbi');
-document.querySelectorAll('.zoom').forEach(function(b){b.addEventListener('click',function(){var i=b.querySelector('img');im.src=i.src;im.alt=i.alt;if(lb.showModal)lb.showModal()})});
-lb.addEventListener('click',function(){lb.close()})})();
+var list=[],cur=0;
+function show(i){cur=(i+list.length)%list.length;var s=list[cur];im.src=s.src;im.alt=s.alt}
+document.querySelectorAll('.zoom').forEach(function(b){b.addEventListener('click',function(){
+var g=b.closest('.gal');var imgs=g?Array.prototype.slice.call(g.querySelectorAll('.zoom img')):[b.querySelector('img')];
+list=imgs;cur=imgs.indexOf(b.querySelector('img'));show(cur);if(lb.showModal)lb.showModal()})});
+lb.addEventListener('click',function(){lb.close()});
+document.addEventListener('keydown',function(e){if(!lb.open||list.length<2)return;
+if(e.key==='ArrowRight'){e.preventDefault();show(cur+1)}else if(e.key==='ArrowLeft'){e.preventDefault();show(cur-1)}});
+var x0=null,y0=null,moved=false;
+lb.addEventListener('touchstart',function(e){var t=e.touches[0];x0=t.clientX;y0=t.clientY;moved=false},{passive:true});
+lb.addEventListener('touchend',function(e){if(x0===null||list.length<2)return;var t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0;x0=null;
+if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.3){moved=true;show(cur+(dx<0?1:-1))}});
+lb.addEventListener('click',function(e){if(moved){moved=false;e.stopImmediatePropagation()}},true);
+})();
 </script>
 </body></html>

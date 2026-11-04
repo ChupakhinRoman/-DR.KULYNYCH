@@ -82,9 +82,11 @@ h1 small.gt{color:var(--gold-text)}
 .dips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:6px}
 .dips.one{grid-template-columns:minmax(0,1fr)}
 figcaption{font-size:13.5px;color:var(--muted);margin-top:7px;line-height:1.35}
-dialog.lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible}
+dialog.lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible;outline:0;box-shadow:none}
+dialog.lb:focus,dialog.lb:focus-visible,dialog.lb img:focus,dialog.lb img:focus-visible{outline:0}
+dialog.lb img{-webkit-tap-highlight-color:transparent}
 dialog.lb::backdrop{background:rgba(20,14,4,.82)}
-dialog.lb img{display:block;max-width:96vw;max-height:92vh;border-radius:10px;background:#fff;cursor:zoom-out}
+dialog.lb img{display:block;max-width:96vw;max-height:92vh;border-radius:10px;background:transparent;border:0;outline:0;cursor:zoom-out}
 @media(max-width:560px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.gal figure:nth-child(3){grid-column:1/-1}.gal figure:nth-child(3) .zoom{aspect-ratio:16/11}.dips{grid-template-columns:minmax(0,1fr)}}
 </style></head><body><div class="wrap">
 <div class="bar"><a class="brand gold" href="./">DR. KULYNYCH</a><a class="back" href="./">← На головну</a></div>
