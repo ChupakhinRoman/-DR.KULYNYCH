@@ -4,7 +4,19 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
+<meta name="description" content="Олександр Кулинич - ортодонт-стоматолог, дитячий терапевт-стоматолог, стаж 10 років. Стоматологія DR. KULYNYCH, с. Новосілки. Запис: +380 93 772 7609.">
 <title>Олександр Кулинич - Стоматологія DR. KULYNYCH</title>
+<link rel="canonical" href="https://drkulynych.com.ua/oleksandr.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:site_name" content="DR. KULYNYCH">
+<meta property="og:title" content="Олександр Кулинич - Стоматологія DR. KULYNYCH">
+<meta property="og:description" content="Олександр Кулинич - ортодонт-стоматолог, дитячий терапевт-стоматолог, стаж 10 років. Стоматологія DR. KULYNYCH, с. Новосілки. Запис: +380 93 772 7609.">
+<meta property="og:url" content="https://drkulynych.com.ua/oleksandr.html">
+<meta property="og:image" content="https://drkulynych.com.ua/assets/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap"></noscript>
 <style>
 :root{--bg:#f6f1e7;--panel:#fcfaf4;--ink:#2a2318;--muted:#6a5e4a;--line:#e3d7bd;--gold-deep:#7a5516;--gold-text:#7d5712;--gold:#b8862b;--gold-hi:#e6c875;
@@ -123,16 +135,19 @@ lb.addEventListener('click',function(){lb.close()})})();
   gtag('js',new Date());gtag('config',ID);
   function load(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.appendChild(s)}
   if(document.readyState==='complete')setTimeout(load,1500);else addEventListener('load',function(){setTimeout(load,1500)});
+  var P=location.pathname.toLowerCase(),PAGE=P.indexOf('maria')>-1?'maria':P.indexOf('oleksandr')>-1?'oleksandr':'main';
+  var BLOCKS=[['.dock','dock_bottom_bar'],['.mnav','header_menu'],['.nav','header_menu'],['.top','header_menu'],['#top','hero'],['#doctors','doctors'],['#prices','prices'],['#reviews','reviews'],['#contacts','contacts'],['#power','power_24_7'],['footer','footer'],['.bar','doctor_page_top'],['.cta','doctor_page_cta']];
+  function blockOf(a){for(var i=0;i<BLOCKS.length;i++){if(a.closest(BLOCKS[i][0]))return BLOCKS[i][1]}return PAGE==='main'?'other':'doctor_page'}
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a');if(!a)return;
-    var h=a.getAttribute('href')||'',n=null;
-    if(h.indexOf('tel:')===0)n='click_phone';
-    else if(h.indexOf('t.me/')>-1)n='click_telegram';
-    else if(h.indexOf('/review')>-1&&h.indexOf('g.page')>-1)n='click_review';
-    else if(h.indexOf('maps.app.goo.gl')>-1||h.indexOf('google.com/maps')>-1)n='click_maps';
-    else if(h==='#contacts')n='click_book';
-    else if(h.indexOf('maria.html')>-1||h.indexOf('oleksandr.html')>-1)n='open_doctor_page';
-    if(n)gtag('event',n,{link_url:h,link_text:(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,60),page_path:location.pathname});
+    var h=a.getAttribute('href')||'',n=null,t='';
+    if(h.indexOf('tel:')===0){n='click_phone';t=h.slice(4)}
+    else if(h.indexOf('t.me/')>-1){n='click_telegram';t='telegram'}
+    else if(h.indexOf('g.page')>-1&&h.indexOf('/review')>-1){n='click_review';t='review_form'}
+    else if(h.indexOf('google.com/maps')>-1||h.indexOf('maps.app.goo.gl')>-1){n='click_maps';t=h.indexOf('/maps/dir')>-1?'route_from_metro':'map_link'}
+    else if(h==='#contacts'){n='click_book';t='book_button'}
+    else if(h.indexOf('maria.html')>-1||h.indexOf('oleksandr.html')>-1){n='open_doctor_page';t=h.indexOf('maria')>-1?'maria':'oleksandr'}
+    if(n)gtag('event',n,{page_name:PAGE,block:blockOf(a),target:t,link_url:h,link_text:(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,60)});
   },true);
 })();
 </script>
